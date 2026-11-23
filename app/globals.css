@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette taken from the live thecasinova.com UI */
+  --color-ink: #080a07;
+  --color-ink-2: #0e1710;
+  --color-panel: #101510;
+  --color-panel-2: #132015;
+  --color-line: rgb(144 247 62 / 0.12);
+  --color-pink: #90f73e; /* primary accent (neon lime) — token name kept for compatibility */
+  --color-pink-soft: #b4ff74;
+  --color-violet: #13951c;
+  --color-cyan: #27b52a;
+  --color-lime: #90f73e;
+  --color-orange: #ff7a2f;
+  --color-gold: #e8b93a;
+  --color-teal: #24502a;
+  --color-text: #f2f7ef;
+  --color-muted: #a3b39f;
+  --color-subtle: #74836f;
+
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  background: var(--color-ink);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Chunky chrome headline, like the reference */
+.text-chrome {
+  background: linear-gradient(180deg, #ffffff 0%, #eef5ea 45%, #a7b8a2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 24px rgb(144 247 62 / 0.2));
+}
+
+.text-pink-grad {
+  background: linear-gradient(90deg, #90f73e, #27b52a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* soft film grain */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-pink);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-14px) rotate(var(--r, 0deg));
+  }
+}
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}

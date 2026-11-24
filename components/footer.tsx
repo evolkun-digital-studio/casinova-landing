@@ -16,17 +16,17 @@ export function Footer() {
         <div className="flex flex-col gap-5 lg:items-end">
           <div className="flex gap-2">
             {[
-              { href: links.telegram, Icon: TelegramIcon, label: "Telegram" },
-              { href: links.instagram, Icon: (p: { className?: string }) => <InstagramIcon {...p} gradient />, label: "Instagram" },
-              { href: links.whatsapp, Icon: WhatsAppIcon, label: "WhatsApp" },
-            ].map(({ href, Icon, label }) => (
+              { href: links.telegram, Icon: TelegramIcon, label: "Telegram", tone: "text-[#229ed9] hover:bg-[#229ed9]/10" },
+              { href: links.instagram, Icon: (p: { className?: string }) => <InstagramIcon {...p} gradient />, label: "Instagram", tone: "hover:bg-white/10" },
+              { href: links.whatsapp, Icon: WhatsAppIcon, label: "WhatsApp", tone: "text-[#25d366] hover:bg-[#25d366]/10" },
+            ].map(({ href, Icon, label, tone }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Casinova on ${label}`}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-muted transition hover:border-pink/50 hover:text-text"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border border-line transition hover:border-pink/50 ${tone}`}
               >
                 <Icon className="h-5 w-5" />
               </a>

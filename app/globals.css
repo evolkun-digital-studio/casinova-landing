@@ -21,6 +21,16 @@
 
   --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-casino: "Casino", sans-serif;
+  --font-casino-3d: "Casino 3D", sans-serif;
+  --font-casino-3d-filled: "Casino 3D Filled", sans-serif;
+  --font-casino-3d-filled-marquee: "Casino 3D Filled Marquee", sans-serif;
+  --font-casino-3d-lines: "Casino 3D Lines", sans-serif;
+  --font-casino-3d-lines-marquee: "Casino 3D Lines Marquee", sans-serif;
+  --font-casino-3d-marquee: "Casino 3D Marquee", sans-serif;
+  --font-casino-flat: "Casino Flat", sans-serif;
+  --font-casino-flat-shadow: "Casino Flat Shadow", sans-serif;
+  --font-casino-shadow: "Casino Shadow", sans-serif;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }

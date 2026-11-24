@@ -46,7 +46,7 @@ export function SectionTitle({
           {eyebrow}
         </p>
       )}
-      <h2 className="text-chrome mt-3 font-display text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl">
+      <h2 className="text-chrome mt-3 font-display text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-5xl">
         {children}
       </h2>
     </div>

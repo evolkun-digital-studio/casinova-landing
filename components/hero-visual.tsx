@@ -20,6 +20,11 @@ const R_POCKET_IN = 140;
 const R_NUM = 168;
 export const BALL_R = 192; // ball orbit radius in viewBox units
 
+// Keep SVG attributes byte-for-byte identical between the server and client.
+// React can otherwise serialize the same floating-point value with different
+// final digits during hydration.
+const svgNumber = (value: number) => value.toFixed(6).replace(/\.?0+$/, "");
+
 const polar = (r: number, deg: number) => {
   const a = ((deg - 90) * Math.PI) / 180;
   return [C + r * Math.cos(a), C + r * Math.sin(a)] as const;
@@ -33,7 +38,7 @@ function pocketPath(i: number) {
   const [x1, y1] = polar(R_POCKET_OUT, a1);
   const [x2, y2] = polar(R_POCKET_IN, a1);
   const [x3, y3] = polar(R_POCKET_IN, a0);
-  return `M${x0} ${y0} A${R_POCKET_OUT} ${R_POCKET_OUT} 0 0 1 ${x1} ${y1} L${x2} ${y2} A${R_POCKET_IN} ${R_POCKET_IN} 0 0 0 ${x3} ${y3}Z`;
+  return `M${svgNumber(x0)} ${svgNumber(y0)} A${R_POCKET_OUT} ${R_POCKET_OUT} 0 0 1 ${svgNumber(x1)} ${svgNumber(y1)} L${svgNumber(x2)} ${svgNumber(y2)} A${R_POCKET_IN} ${R_POCKET_IN} 0 0 0 ${svgNumber(x3)} ${svgNumber(y3)}Z`;
 }
 
 function RouletteWheel() {
@@ -80,15 +85,15 @@ function RouletteWheel() {
         return (
           <text
             key={`t${n}`}
-            x={x}
-            y={y}
+            x={svgNumber(x)}
+            y={svgNumber(y)}
             fill="#fff"
             fontSize="10"
             fontWeight="600"
             fontFamily="Montserrat, sans-serif"
             textAnchor="middle"
             dominantBaseline="central"
-            transform={`rotate(${i * step} ${x} ${y})`}
+            transform={`rotate(${svgNumber(i * step)} ${svgNumber(x)} ${svgNumber(y)})`}
           >
             {n}
           </text>

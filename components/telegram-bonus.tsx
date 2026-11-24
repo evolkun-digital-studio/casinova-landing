@@ -32,7 +32,7 @@ export function TelegramBonus() {
                 </p>
                 <h2
                   id="bonus-title"
-                  className="mt-6 font-display text-[clamp(40px,6.5vw,84px)] font-black uppercase leading-[0.9] tracking-[-0.02em]"
+                  className="mt-6 font-display text-[clamp(40px,6.5vw,60px)] font-black uppercase leading-[0.9] tracking-[-0.02em]"
                 >
                   <span className="text-[#102b3d]">Join Telegram.</span>
                   <br />

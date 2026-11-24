@@ -35,36 +35,27 @@ export function Hero() {
       >
         {/* text */}
         <div className="order-2 text-center lg:order-1 lg:text-left">
-          <motion.p
+          {/* <motion.p
             {...rise(0)}
             className="inline-flex items-center gap-2.5 font-display text-[11px] font-medium uppercase tracking-[0.3em] text-muted"
           >
-            Live casino &amp; sports
-          </motion.p>
+            
+          </motion.p> */}
 
           <motion.h1
             id="hero-title"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-            className="mt-6 font-sans text-[clamp(40px,5.2vw,76px)] leading-[1.02] tracking-[-0.03em]"
+            className="mt-6 font-casino text-[clamp(40px,5.2vw,76px)] leading-[1.02] tracking-[-0.03em]"
           >
             <span className="block font-light text-white">The table</span>{" "}
-            <span className="relative inline-block font-light text-lime">
-              is live.
-              <motion.span
-                aria-hidden
-                className="absolute -bottom-1 left-0 h-[2px] w-full origin-left bg-lime"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.9, delay: 0.6, ease: EASE }}
-              />
-            </span>
+            <span className="inline-block font-light text-lime">is live.</span>
             <span className="sr-only"> — Casinova online casino and sports betting</span>
           </motion.h1>
 
           <motion.p {...rise(0.25)} className="mt-6 text-base font-normal text-muted">
-            Roulette, teen patti, blackjack &amp; sports — one tap away.
+            Live casino &amp; sports
           </motion.p>
 
           <motion.div {...rise(0.35)} className="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -79,7 +70,7 @@ export function Hero() {
             </a>
             <a
               href="#bonus"
-              className="inline-flex h-[52px] items-center gap-2 rounded-full border border-lime/40 px-6 font-display text-[15px] font-semibold text-lime transition hover:-translate-y-0.5 hover:border-lime/70 hover:bg-lime/5"
+              className="inline-flex h-[52px] items-center gap-2 rounded-full border border-[#229ed9]/45 bg-[#f3fbff] px-6 font-display text-[15px] font-semibold text-[#229ed9] shadow-[0_10px_28px_-10px_rgba(34,158,217,0.75)] transition hover:-translate-y-0.5 hover:border-[#229ed9]/75 hover:bg-[#eaf8ff] hover:shadow-[0_14px_34px_-10px_rgba(34,158,217,0.9)]"
             >
               <TelegramIcon className="h-4 w-4" />
               Join Telegram for more bonus
